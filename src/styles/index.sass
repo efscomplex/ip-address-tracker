@@ -1,0 +1,67 @@
+@import './reset'
+#app
+   height: 100vh
+   display: flex
+   flex-direction: column
+header 
+   padding: 2rem 2rem 6rem
+   color: white
+   text-align: center
+   background: url(../assets/images/pattern-bg.png) center / cover no-repeat
+   h1
+      margin-bottom: 1.4rem
+   label
+      padding: 0 0 0 .6rem
+      display: flex
+      justify-content: space-between
+      max-width: 50ch
+      background-color: white
+      border-radius:19px
+      display: block
+      margin: auto
+      
+      .arrow
+         color: black
+         padding: 10px
+         border-radius: 0 6px 6px 0
+         background-color: black
+         border-radius: 50%
+         vertical-align: middle
+         cursor: pointer
+      input
+         min-width: 40ch
+         background-color: transparent
+         padding: 12px
+         border: none
+         &:focus
+            outline: none
+.track-wrap
+   position:relative
+.track
+   position: absolute
+   display: flex
+   justify-content: center
+   gap: 1rem
+   border-radius: 12px
+   background-color: white
+   left: 50%
+   transform: translate(-50%,-50%)
+   & > *:not(.separator)
+      padding: 1rem
+   .heading
+      color: gray
+      text-transform: capitalize
+      font-size:.85rem
+      margin-bottom: .6rem
+   .separator
+      height: 10ch
+      border-left: 1px solid gray
+   .info
+      font-size: 1.6rem
+      font-weight: bold
+      text-transform: capitalize
+main
+   height:content-box
+   background-color: black
+   color: white
+   flex-grow: 1
