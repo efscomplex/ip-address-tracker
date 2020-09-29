@@ -14,10 +14,12 @@ export default function App() {
 			const resp = await fetch(`${API_URL}domain=${inputValue}`)
 			const data = await resp.json()
 			setCurrentTrack(() => data)
-			console.log(data)
 		} catch (err) {
 			console.log('ups!! has an error:', err)
 		}
+   }
+   const sendTrackIfEnter = (event) => {
+		if (event.key === 'Enter') sendTrack()
 	}
 	useEffect(() => {
 		sendTrack()
@@ -25,19 +27,24 @@ export default function App() {
 
 	return (
 		<div id='app'>
+			<small className='creator'>
+				{' '}
+				created by @easyDev <br /> Find me on Github - efscomplex
+			</small>
 			<header>
 				<h1>IP Address Tracker</h1>
 				<label>
 					<input
 						placeholder='Search for any IP address or domain'
-						onChange={setTrack}></input>
+						onChange={setTrack}
+						onKeyUp={sendTrackIfEnter}></input>
 					<img src={arrowSrc} className='arrow' onClick={sendTrack}></img>
 				</label>
 			</header>
 			<div className='track-wrap'>
 				<Track info={currentTrack} />
 			</div>
-			<Main />
+			<Main info={currentTrack} />
 		</div>
 	)
 }

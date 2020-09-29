@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Track({ info }) {
-	console.log(info)
 	return (
 		<div className='track'>
 			<div className='ip-address'>
@@ -21,7 +20,7 @@ function Track({ info }) {
 			<div className='separator'></div>
 			<div className='timezone'>
 				<p className='heading'>timezone</p>
-				<p className='info'>324.343.43</p>
+				<p className='info'>{info.location?.timezone}</p>
 			</div>
 			<div className='separator'></div>
 			<div className='isp'>
