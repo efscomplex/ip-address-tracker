@@ -4,7 +4,7 @@ import Track from '@/components/base/Track'
 import arrowSrc from '@/assets/images/icon-arrow.svg'
 
 const API_URL = `https://geo.ipify.org/api/v1?apiKey=${process.env.API_KEY}`
-console.log(process.env.API_KEY)
+
 export default function App() {
 	const [inputValue, setInputValue] = useState('www.google.com')
 	const [currentTrack, setCurrentTrack] = useState({})
