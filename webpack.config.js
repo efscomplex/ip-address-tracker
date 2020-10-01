@@ -2,6 +2,13 @@ const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 
+const plugins = [
+	new HTMLWebpackPlugin({
+		template: './src/index.html',
+	}),
+]
+process.env.NODE_ENV !== 'production' && plugins.push(new Dotenv())
+
 module.exports = {
 	entry: './src/index.js',
 	output: {
@@ -42,10 +49,5 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [
-		new HTMLWebpackPlugin({
-			template: './src/index.html',
-		}),
-		new Dotenv(),
-	],
+	plugins,
 }
