@@ -5,8 +5,8 @@ const Dotenv = require('dotenv-webpack')
 module.exports = {
 	entry: './src/index.js',
 	output: {
-		path: path.resolve(__dirname, './dist'),
-		filename: 'boundle.js',
+		path: path.resolve(__dirname, './build'),
+		filename: 'static/js/[name].boundle.js',
 	},
 	resolve: {
 		alias: {

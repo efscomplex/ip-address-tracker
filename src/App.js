@@ -27,7 +27,7 @@ export default function App() {
 
 	return (
 		<div id='app'>
-			<small className='creator'>
+      <small className='creator'>
 				{' '}
 				created by @easyDev <br /> Find me on Github - efscomplex
 			</small>
