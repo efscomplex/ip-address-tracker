@@ -49,20 +49,21 @@ header
    position: absolute
    top: 2rem
    left: 2rem
-   @media(max-width: 920px)
-         bottom: 2rem
-         right: 2rem
    color: white
    text-transform: capitalize
    background-color: rgba(0,0,0, .3)
    padding: 1rem
    border-radius: 16px
+   @media(max-width: 920px)
+     display: none
 .track
+   padding: 6px
    z-index: 10
    width: max-content
    position: absolute
    display: flex
    align-items: flex-basis
+   flex-wrap: wrap
    justify-content: center
    gap: 1rem
    border-radius: 12px
@@ -81,9 +82,16 @@ header
       border-left: 1px solid gray
       align-self: center
    .info
-      font-size: 1.6rem
+      font-size: 1.6em
       font-weight: bold
       text-transform: capitalize
+   @media(max-width: 720px)
+      gap:0
+      .info      
+         font-size: 1em
+      & > *:not(.separator)
+         padding: 4px
+   
 main
    z-index: 0
    background-color: black
