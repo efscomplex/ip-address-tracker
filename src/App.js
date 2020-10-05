@@ -3,7 +3,7 @@ import Main from '@/components/core/Main'
 import Track from '@/components/base/Track'
 import arrowSrc from '@/assets/images/icon-arrow.svg'
 
-const API_URL = `https://geo.ipify.org/api/v1?apiKey=${process.env.API_KEY}`
+const API_URL = '/.netlify/functions/ipTrack'
 
 export default function App() {
 	const [inputValue, setInputValue] = useState('www.google.com')
@@ -11,7 +11,7 @@ export default function App() {
 	const setTrack = ({ target }) => setInputValue(() => target.value)
 	const sendTrack = async () => {
 		try {
-			const resp = await fetch(`${API_URL}domain=${inputValue}`)
+			const resp = await fetch(`${API_URL}?domain=${inputValue}`)
 			const data = await resp.json()
 			setCurrentTrack(() => data)
 		} catch (err) {
